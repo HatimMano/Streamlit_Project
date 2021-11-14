@@ -129,7 +129,7 @@ def main():
         if st.button('Voir Commentaires...'):
             write_smthg_stylish("Le nombre de données analysées (50 000) ne nous permet pas d'avoir des chiffres précis. C'est pourquoi nous obtenons des valeurs parfois très différentes de la réalité. Comparons nos valeurs avec celles trouvées sur Internet",
             'cursive', 'White', 20)
-            image = Image.open('/Users/hatimmanowaraly/Desktop/streamlit/test1.jpg')
+            image = Image.open('https://github.com/HatimMano/Streamlit_Project/blob/main/test1.jpg')
             st.image(image, caption='Comparaison entre données officielles et calculées', width= 700)
             write_smthg_stylish("Ecart entre prix officel et prix calculé à partir du dataset",
             'cursive', 'White', 20)
