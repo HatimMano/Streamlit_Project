@@ -136,7 +136,7 @@ def main():
             st.write(alt.Chart(df_ecart).mark_bar().encode(alt.X("arrondissement"),y='ecart(€/m2)'))
             st.write("On a un écart moyen de "+ str(round(ecart_moyen)) + "€/m2 par arrondissement.")
         
-        write_smthg_stylish("Evolution du marché annuel de l'immobilier sur Paris :", 'cursive', 'White', 20)
+        write_smthg_stylish("Evolution du montant annuel investi sur l'immobilier dans Paris entre 2016 et 2020 :", 'cursive', 'White', 20)
         df['date_mutation'] = df['date_mutation'].astype(str).str[0:4]
         st.write(alt.Chart(df).mark_bar().encode(alt.X("date_mutation"),y='valeur_fonciere'))
 
