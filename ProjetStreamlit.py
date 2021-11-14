@@ -33,15 +33,15 @@ def timing(f):
 @st.cache(allow_output_mutation=True)
 def load_data(int,nmin):        #Loading du DataFrame contenant uniquement les lignes liées à la commune de Paris
     if int == 16:
-        file = Path() / '/Users/hatimmanowaraly/Desktop/EFREIM1/DataViz/Projet DataViz/full_2016.csv'
+        file = 'https://jtellier.fr/DataViz/full_2016.csv'
     if int == 17:
-        file = Path() / '/Users/hatimmanowaraly/Desktop/EFREIM1/DataViz/Projet DataViz/full_2017.csv'
+        file = 'https://jtellier.fr/DataViz/full_2017.csv'
     if int == 18:
-        file = Path() / '/Users/hatimmanowaraly/Desktop/EFREIM1/DataViz/Projet DataViz/full_2018.csv'
+        file = 'https://jtellier.fr/DataViz/full_2018.csv'
     if int == 19:
-        file = Path() / '/Users/hatimmanowaraly/Desktop/EFREIM1/DataViz/Projet DataViz/full_2019.csv'
+        file = 'https://jtellier.fr/DataViz/full_2019.csv'
     if int == 20:
-        file = Path() / '/Users/hatimmanowaraly/Desktop/EFREIM1/DataViz/Projet DataViz/full_2020.csv'
+        file = 'https://jtellier.fr/DataViz/full_2020.csv'
     data = pd.read_csv(file, skiprows = range(1,nmin))
     data = preprocessing(data)
     return data
@@ -265,10 +265,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
     
-
-
-
-    
-#st.metric  
