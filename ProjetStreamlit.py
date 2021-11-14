@@ -11,6 +11,7 @@ import time
 from functools import wraps
 from time import time
 from pathlib import Path
+import plotly_express as px
 import csv
 import altair as alt
 from PIL import Image
@@ -147,6 +148,9 @@ def main():
 
         #Affichage du DataFrame Biens "de luxe" :
         st.title('Visualisons les biens > 7 chiffres vendus dans chaque arrondissement.')
+        fig = px.scatter(df_luxe1, x = 'code_postal', y = "surface_reelle_bati", size = "valeur_fonciere",
+        color = "valeur_fonciere", hover_name = "valeur_fonciere", size_max = 50, range_color=[10,20],animation_frame = 'code_postal' )
+        #st.write(fig)
         
         write_smthg_stylish('Choisissez une valeur de bien (en M€)', 'cursive', 'Grey', 30)
         valeur_bien = st.select_slider('', options = range(0,101))
