@@ -11,7 +11,6 @@ import time
 from functools import wraps
 from time import time
 from pathlib import Path
-import plotly_express as px
 import csv
 import altair as alt
 from PIL import Image
@@ -90,8 +89,6 @@ def main():
 
     #1) Création DataFrame Moyenne :
     df['prix_m2'] = df['valeur_fonciere']/df['surface_reelle_bati']
-    df_time = df
-    df2 = df[['code_postal', 'surface_reelle_bati']].groupby(['code_postal']).mean()
     df_par_arrondisssement = df[['code_postal', 'valeur_fonciere','surface_reelle_bati']].groupby(['code_postal']).mean()
     df_par_arrondisssement.rename(columns={"valeur_fonciere": "valeur_fonciere_moyenne", "surface_reelle_bati" : "surface_reelle_bati_moyenne"},inplace = True)
     df_par_arrondisssement['arrondissement'] = range(1,21)
@@ -148,9 +145,6 @@ def main():
 
         #Affichage du DataFrame Biens "de luxe" :
         st.title('Visualisons les biens > 7 chiffres vendus dans chaque arrondissement.')
-        fig = px.scatter(df_luxe1, x = 'code_postal', y = "surface_reelle_bati", size = "valeur_fonciere",
-        color = "valeur_fonciere", hover_name = "valeur_fonciere", size_max = 50, range_color=[10,20],animation_frame = 'code_postal' )
-        #st.write(fig)
         
         write_smthg_stylish('Choisissez une valeur de bien (en M€)', 'cursive', 'Grey', 30)
         valeur_bien = st.select_slider('', options = range(0,101))
