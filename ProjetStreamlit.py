@@ -264,5 +264,8 @@ def main():
         
 
 if __name__ == "__main__":
-    main()
+    #main()
+        #Création du sidebar
+    st.sidebar.title('Menu')
+    domaine = st.sidebar.selectbox("", ["Analyse Globale", "Analyse Biens Onéreux", "Recherche Appartement ou Maison"])
     
